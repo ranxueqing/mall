@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-06 16:35:11
- * @LastEditTime: 2021-01-06 17:31:46
+ * @LastEditTime: 2021-01-07 12:08:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vueCli\mall\src\views\home\childComponents\RecommendView.vue
 -->
 <template>
   <div class="recommend">
-      <div class="recomItem" v-for="item in recommends">
+      <div class="recomItem" v-for="item in recommends" :key="item.title">
           <a :href="item.link">
               <img :src="item.image" alt="">
             <div>{{item.title}}</div>
