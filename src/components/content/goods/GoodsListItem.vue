@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-07 15:18:01
- * @LastEditTime: 2021-01-07 16:45:06
+ * @LastEditTime: 2021-01-11 14:37:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \mall\src\components\content\goods\GoodsListItem.vue
 -->
 <template>
   <div class="goods_list_item">
-      <img :src="goodsLists.show.img" alt="">
+      <img :src="goodsLists.show.img" alt="" @load="imageLoad">
       <div class="goodsInfo">
           <p>{{goodsLists.title}}</p>
           <span class="price">{{goodsLists.price}}</span>
@@ -29,6 +29,13 @@ export default {
         }
 
     },
+    methods:{
+        imageLoad(){
+            // 利用事件总线
+            this.$bus.$emit('imageLoad')
+        }
+    }
+
     
 }
 </script>
