@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-08 18:16:50
- * @LastEditTime: 2021-01-11 18:16:17
+ * @LastEditTime: 2021-01-21 15:13:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \mall\src\components\common\scroll\Scroll.vue
@@ -44,14 +44,22 @@ export default {
            probeType:this.probeType,
            pullUpLoad:this.pullUpLoad
         })
-        //2、监听滚动位置
-        this.scroll.on('scroll',(position)=>{
+        //2、监听滚动位置probeType ==1 时是没有意义的
+        if(this.probeType===2||this.probeType===3){
+          this.scroll.on('scroll',(position)=>{
             this.$emit('scroll',position)
-        })
+         })
+        }
+        
         // 3、完成上拉加载更多
-        this.scroll.on('pullingUp',()=>{
+        if(this.pullUpLoad){
+            this.scroll.on('pullingUp',()=>{
+            // 监听滚动到底部
+            // console.log("监听到底部")
+            // 将事件传递给父组件
            this.$emit("pullingUP")
         })
+        }
         
     },
     methods:{
@@ -60,10 +68,13 @@ export default {
         },
         refresh(){
             this.scroll && this.scroll.refresh()
-            console.log('------------')
+            // console.log('------------')
         },
         finishPullUp(){
             this.scroll.finishPullUp()
+        },
+        getScrollY(){
+            return this.scroll.y
         }
     }
 }

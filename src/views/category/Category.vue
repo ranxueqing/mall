@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-04 17:40:38
- * @LastEditTime: 2021-01-08 18:07:56
+ * @LastEditTime: 2021-01-21 15:19:22
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \mall\src\views\category\Category.vue
@@ -69,11 +69,12 @@ export default {
           this.scroll.finishPullUp()
         },2000)
       })
-    }
+    },
+    
 }
 </script>
 
-<style>
+<style scoped>
 .wrapper{
   height: 150px;
   background: red;

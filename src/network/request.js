@@ -1,6 +1,14 @@
+/*
+ * @Author: your name
+ * @Date: 2021-01-05 11:50:40
+ * @LastEditTime: 2021-01-21 16:30:43
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \mall\src\network\request.js
+ */
 import axios from 'axios'
 
-export function request(config){
+export default function request(config){
     // 创建axios 实例
     const instance = axios.create({
         baseURL:'http://152.136.185.210:7878/api/m5',

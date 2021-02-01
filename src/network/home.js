@@ -1,12 +1,12 @@
 /*
  * @Author: your name
  * @Date: 2021-01-05 12:21:28
- * @LastEditTime: 2021-01-07 14:50:22
+ * @LastEditTime: 2021-01-21 16:31:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \mall\src\network\home.js
  */
-import {request} from './request'
+import request from './request'
 
 /**
  * @description: 首页导航信息和最近流行图片等信息的获取
