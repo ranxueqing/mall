@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-21 15:37:53
- * @LastEditTime: 2021-02-01 15:28:45
+ * @LastEditTime: 2021-02-01 17:22:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \mall\src\views\detail\Detail.vue
@@ -137,6 +137,7 @@ export default {
         // this.themeTopYs.push(this.$refs.comment.$el.offsetTop)
         // this.themeTopYs.push(this.$refs.recommends.$el.offsetTop)
     },
+    
     methods:{
         imageLoad(){
             this.$refs.scroll.refresh()

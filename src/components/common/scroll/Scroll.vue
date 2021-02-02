@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-08 18:16:50
- * @LastEditTime: 2021-01-21 15:13:57
+ * @LastEditTime: 2021-02-01 18:56:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \mall\src\components\common\scroll\Scroll.vue
@@ -13,8 +13,7 @@
   <div class="wrapper" ref="wrapper">
       <div class="content">
           <slot></slot>
-      </div>
-      
+      </div>   
   </div>
 </template>
 
