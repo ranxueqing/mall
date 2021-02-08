@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-04 17:40:51
- * @LastEditTime: 2021-01-23 17:53:26
+ * @LastEditTime: 2021-02-04 18:30:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vueCli\mall\src\views\home\Home.vue
@@ -190,6 +190,7 @@ export default {
 .home-nav{
     background-color: var(--color-text);
     color: white;
+    font-weight: bold;
     /* 在使用浏览器原生滚动时，为了让导航不跟随一起滚动 */
     /* position: fixed;
     left: 0;

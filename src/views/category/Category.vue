@@ -1,82 +1,53 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-04 17:40:38
- * @LastEditTime: 2021-01-21 15:19:22
+ * @LastEditTime: 2021-02-08 16:52:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \mall\src\views\category\Category.vue
 -->
 <template>
-  <div class="wrapper">
-    <ul>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-      <li>列表</li>
-    </ul>
-    
+  <div class="category">
+   <nav-bar class="nav-bar">
+     <div slot="center">商品分类</div>
+   </nav-bar>
+   <category-main :categoryTitles="categoryList" ></category-main>
   </div>
 </template>
 
 <script>
- import BScroll from "better-scroll";
+import NavBar from '@/components/common/navbar/NavBar'
+ import {getCategoryData} from '@/network/category'
+
+import CategoryMain from './childComponents/CategoryMain.vue'
 export default {
     name:"Category",
+    components:{
+      NavBar,
+        CategoryMain 
+    },
     data(){
       return {
-        scroll:null
+       categoryList:null,
+       maitKey:'',
       }
     },
-    mounted(){
-      this.scroll = new BScroll(document.querySelector('.wrapper'),{
-        probeType:3,
-        pullUpLoad:true
-      })
-      this.scroll.on('scroll',(position)=>{
-      //  console.log(position);
-      })
-      this.scroll.on('pullingUp',()=>{
-        console.log('上拉加载更多')
-        setTimeout(()=>{
-          this.scroll.finishPullUp()
-        },2000)
+    created(){
+      // 获取分类列表 
+      getCategoryData().then(res=>{
+        this.categoryList= res.data.category.list
+        // console.log(this.categoryList)
       })
     },
     
 }
 </script>
 
-<style scoped>
-.wrapper{
-  height: 150px;
-  background: red;
+<style lang="less" scoped>
+.nav-bar{
+  background: var(--color-text);
+  color: #fff;
+  font-weight: bold;
 }
+
 </style>

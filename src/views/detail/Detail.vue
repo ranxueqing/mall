@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-01-21 15:37:53
- * @LastEditTime: 2021-02-01 17:22:35
+ * @LastEditTime: 2021-02-03 16:18:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \mall\src\views\detail\Detail.vue
@@ -181,8 +181,12 @@ export default {
 
             // 将商品添加到购物车里
             // this.$store.commit("addCart",product)
-            this.$store.dispatch("addCart",product)
-            console.log("hhkjh")
+            this.$store.dispatch("addCart",product).then(res=>{
+                // console.log(res)
+                console.log(this.$toast)
+                this.$toast.show(res,1500)
+                
+            })
         }
     }
 }

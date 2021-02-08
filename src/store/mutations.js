@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-01 15:59:40
- * @LastEditTime: 2021-02-01 17:08:43
+ * @LastEditTime: 2021-02-02 15:32:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \mall\src\store\mutations.js
@@ -13,6 +13,7 @@ export default {
             payload.count++
         },
         addToCart(state,payload){
+            payload.checked=true
             state.cartList.push(payload)
         }    
     
